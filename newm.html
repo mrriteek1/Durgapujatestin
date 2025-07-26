@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>सदस्य फ़ॉर्म - MrRiteek</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      background: linear-gradient(to right, #111, #222);
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      max-width: 450px;
+      margin: auto;
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff0080;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff00ff;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: #2c2c2c;
+      color: white;
+    }
+    input[type="submit"] {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #ff0080, #ff00ff);
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    input[type="submit"]:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #ff00ff, #ff0080);
+    }
+    .back-btn {
+      margin-top: 20px;
+      display: inline-block;
+      color: #aaa;
+      text-decoration: none;
+      background: #333;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .success-message {
+      text-align: center;
+      color: #00ff88;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>सदस्य फ़ॉर्म</h2>
+    <form action="https://formsubmit.co/mrriteek8225@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="return showSuccess()">
+      <label>आपका नाम:</label>
+      <input type="text" name="Name" required>
+
+      <label>मोबाइल नंबर:</label>
+      <input type="tel" name="Phone" pattern="[0-9]{10}" required>
+
+      <label>अपनी फोटो डालें:</label>
+      <input type="file" name="Photo" accept="image/*" required>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <input type="submit" value="जमा करें">
+    </form>
+    <div class="success-message" id="success-msg" style="display:none;">✅ सफलतापूर्वक सदस्य बन गए हैं! धन्यवाद ❤️</div>
+    <a class="back-btn" href="index.html">← वापस जाएं</a>
+  </div>
+
+  <script>
+    function showSuccess() {
+      setTimeout(() => {
+        document.getElementById('success-msg').style.display = "block";
+      }, 200); // थोड़ा delay ताकि Gmail submit हो जाए
+      return true;
+    }
+  </script>
+</body>
+</html>

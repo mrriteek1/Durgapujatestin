@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Durga Moddef Bandla</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #1a1a1a, #2c003e);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #ff0057;
+      box-shadow: 0 0 15px #ff0057;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 0 10px #ff99cc;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 15px;
+    }
+
+    .menu-btn {
+      background: #ffffff10;
+      border: 1px solid #fff3;
+      padding: 10px 20px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #fff3;
+      transition: 0.3s;
+    }
+
+    .menu-btn:hover {
+      background: #ff0057;
+      box-shadow: 0 0 20px #ff3399;
+    }
+
+    .moving-banner {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      padding: 12px 0;
+      background: #ffcc00;
+    }
+
+    .text-content {
+      display: inline-block;
+      padding-left: 100%;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d80000;
+      text-shadow: 1px 1px 2px #000;
+      animation: moveText 59s linear infinite;
+    }
+
+    @keyframes moveText {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ✅ Fixed Slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      margin: 20px auto;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px #ff0099;
+    }
+
+    .slider img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slider img.active {
+      opacity: 1;
+    }
+
+    .schedule {
+      background: #ffffff10;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ffffff30;
+    }
+
+    .schedule h2 {
+      margin-bottom: 10px;
+      text-align: center;
+      color: #ffccff;
+    }
+
+    .event {
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #fff5;
+      padding-bottom: 10px;
+    }
+
+    .event time {
+      color: #ff99ff;
+      font-weight: bold;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #d6006f;
+      margin-bottom: 5px;
+      text-shadow: 0 1px 2px #fff;
+    }
+
+    .donators-container {
+      width: 70%;
+      height: 100px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      border: 2px solid #ff006e;
+      background: linear-gradient(to right, #ffe0f7, #fff);
+      box-shadow: 0 4px 15px rgba(255, 0, 110, 0.2);
+    }
+
+    .donators-list {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      animation: scrollUp 15s linear infinite;
+    }
+
+    .donator {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 8px 20px;
+      color: #ff006e;
+    }
+
+    @keyframes scrollUp {
+      0% { top: 100%; }
+      100% { top: -100%; }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔱 Moving Banner -->
+  <div class="moving-banner">
+    <div class="text-content">
+      🔱 New Durga Moddef Bandla 🔱 जय माता दी 🔱 जय माँ चेड़ी 🔱 New Durga Moddef Bandla 🔱 जय माता दी 🔱 जय माँ चेड़ी 🔱
+    </div>
+  </div>
+
+  <!-- ✅ Image Slider -->
+  <div class="slider" id="slider">
+    <img src="1.jpg" alt="Durga 1" class="active">
+    <img src="2.jpg" alt="Durga 2">
+    <img src="3.jpg" alt="Durga 3">
+    <img src="4.jpg" alt="Durga 4">
+    <img src="5.jpg" alt="Durga 5">
+    <img src="6.jpg" alt="Durga 6">
+    <img src="7.jpg" alt="Durga 7">
+    <img src="8.jpg" alt="Durga 8">
+  </div>
+
+  <!-- Navigation Buttons -->
+  <nav>
+    <button onclick="window.location.href='index.html'" class="menu-btn">🏠 Home</button>
+    <button onclick="window.location.href='time.html'" class="menu-btn">📅 Full Schedule</button>
+    <button onclick="window.location.href='donet.html'" class="menu-btn">🙏 Donation</button>
+    <button onclick="window.location.href='gallery.html'" class="menu-btn">📸 Gallery</button>
+    <button onclick="window.location.href='member.html'" class="menu-btn">🧑‍🤝‍🧑 Member's</button>
+    <button onclick="window.location.href='newm.html'" class="menu-btn">🧑‍🤝‍🧑 New Member</button>
+    <button onclick="window.location.href='map.html'" class="menu-btn">📍 Location</button>
+    <button onclick="window.location.href='helf.html'" class="menu-btn">📰 Help</button>
+  </nav>
+
+  <!-- Daily Schedule -->
+  <div class="schedule">
+    <h2>📅 आज का कार्यक्रम</h2>
+    <div class="event"><time>06:00 AM:</time> मंगल आरती</div>
+    <div class="event"><time>09:00 AM:</time> पुष्पांजलि व पूजा</div>
+    <div class="event"><time>01:00 PM:</time> भंडारा (प्रसाद वितरण)</div>
+    <div class="event"><time>07:00 PM:</time> सांस्कृतिक कार्यक्रम</div>
+    <div class="event"><time>09:00 PM:</time> DJ Night व दर्शन</div>
+  </div>
+
+  <!-- Donators List -->
+  <div class="title">🌟 Top Donators 🌟</div>
+  <center>
+    <div class="donators-container">
+      <div class="donators-list">
+        <div class="donator">1. Ravi Kumar - ₹501</div>
+        <div class="donator">2. Anjali Singh - ₹250</div>
+        <div class="donator">3. Rohit Das - ₹151</div>
+        <div class="donator">4. Neha Roy - ₹101</div>
+        <div class="donator">5. Rajeev Bhai - ₹51</div>
+      </div>
+    </div>
+  </center>
+
+  <!-- Footer -->
+  <div class="footer">
+    Made with ❤️ in India | Admin: Riteek
+  </div>
+
+  <!-- ✅ JavaScript for Slider -->
+  <script>
+    const slides = document.querySelectorAll('.slider img');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  </script>
+
+</body>
+</html>

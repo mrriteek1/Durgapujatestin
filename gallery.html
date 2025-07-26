@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Durga Puja Gallery - MrRiteek</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #ff4d4d;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(255, 77, 77, 0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255, 77, 77, 0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .day {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ff9999;
+      margin-bottom: 8px;
+    }
+
+    .views {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 480px) {
+      .card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Durga Puja 10-Day Gallery</h1>
+
+  <div class="gallery">
+
+    <div class="card">
+      <img src="gallery/day1.jpg" alt="Day 1">
+      <div class="card-content">
+        <div class="day">Day 1 - Kalash Sthapana</div>
+        <div class="views">1.2k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day2.jpg" alt="Day 2">
+      <div class="card-content">
+        <div class="day">Day 2 - Chandra Darshan</div>
+        <div class="views">1k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day3.jpg" alt="Day 3">
+      <div class="card-content">
+        <div class="day">Day 3 - Tritiya Pooja</div>
+        <div class="views">1.1k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day4.jpg" alt="Day 4">
+      <div class="card-content">
+        <div class="day">Day 4 - Chaturthi Aarti</div>
+        <div class="views">1.4k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day5.jpg" alt="Day 5">
+      <div class="card-content">
+        <div class="day">Day 5 - Panchami Darshan</div>
+        <div class="views">1.3k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day6.jpg" alt="Day 6">
+      <div class="card-content">
+        <div class="day">Day 6 - Shashthi Welcome</div>
+        <div class="views">1.6k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day7.jpg" alt="Day 7">
+      <div class="card-content">
+        <div class="day">Day 7 - Saptami Pandal View</div>
+        <div class="views">1.1k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day8.jpg" alt="Day 8">
+      <div class="card-content">
+        <div class="day">Day 8 - Ashtami Sandhya Aarti</div>
+        <div class="views">1.5k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day9.jpg" alt="Day 9">
+      <div class="card-content">
+        <div class="day">Day 9 - Maha Navami</div>
+        <div class="views">1.2k+ Views</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery/day10.jpg" alt="Day 10">
+      <div class="card-content">
+        <div class="day">Day 10 - Vijayadashami Visarjan</div>
+        <div class="views">1.8k+ Views</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
