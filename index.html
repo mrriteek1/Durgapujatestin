@@ -19,19 +19,26 @@
       overflow-x: hidden;
     }
 
+    /* 🔥 Header Glow */
     header {
       text-align: center;
       padding: 20px;
       background: #ff0057;
-      box-shadow: 0 0 15px #ff0057;
+      box-shadow: 0 0 15px #ff0057, 0 0 30px #ff3399;
     }
 
     header h1 {
       font-size: 2rem;
       color: #fff;
-      text-shadow: 0 0 10px #ff99cc;
+      text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff3399, 0 0 30px #ff0057;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff99cc; }
+      to { text-shadow: 0 0 30px #ff0057, 0 0 60px #ff3399; }
     }
 
+    /* Navigation */
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -49,21 +56,40 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 0 10px #fff3;
-      transition: 0.3s;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
     }
 
     .menu-btn:hover {
       background: #ff0057;
       box-shadow: 0 0 20px #ff3399;
+      transform: scale(1.05);
     }
 
+    .menu-btn::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 300%;
+      top: 50%;
+      left: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%) rotate(45deg);
+      transition: 0.5s;
+    }
+    .menu-btn:hover::after {
+      width: 120%;
+    }
+
+    /* 🔱 Moving Banner */
     .moving-banner {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
-      box-sizing: border-box;
       padding: 12px 0;
-      background: #ffcc00;
+      background: linear-gradient(to right, #ffcc00, #ff9900);
+      box-shadow: 0 0 15px #ffcc00;
     }
 
     .text-content {
@@ -73,7 +99,7 @@
       font-weight: bold;
       color: #d80000;
       text-shadow: 1px 1px 2px #000;
-      animation: moveText 59s linear infinite;
+      animation: moveText 50s linear infinite;
     }
 
     @keyframes moveText {
@@ -81,17 +107,16 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* ✅ Fixed Slider */
+    /* ✅ Image Slider */
     .slider {
       position: relative;
       width: 100%;
       max-width: 1280px;
       margin: 20px auto;
-      height: auto;
       aspect-ratio: 16 / 9;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 0 20px #ff0099;
+      box-shadow: 0 0 20px #ff0099, 0 0 40px #ff66cc;
     }
 
     .slider img {
@@ -107,40 +132,53 @@
       opacity: 1;
     }
 
+    /* 📅 Schedule */
     .schedule {
       background: #ffffff10;
       margin: 20px;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 10px #ffffff30;
+      box-shadow: 0 0 15px #ffffff30;
+      animation: fadeIn 1.5s ease;
     }
 
     .schedule h2 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-align: center;
       color: #ffccff;
+      text-shadow: 0 0 10px #ff66cc;
     }
 
     .event {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       border-bottom: 1px dashed #fff5;
       padding-bottom: 10px;
+      font-size: 18px;
+      animation: fadeInUp 1s ease forwards;
     }
-
     .event time {
       color: #ff99ff;
       font-weight: bold;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🌟 Donators */
     .title {
       text-align: center;
       font-size: 24px;
       font-weight: bold;
-      color: #d6006f;
-      margin-bottom: 5px;
-      text-shadow: 0 1px 2px #fff;
+      color: #ff3399;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66cc;
     }
-
     .donators-container {
       width: 70%;
       height: 100px;
@@ -149,7 +187,7 @@
       border-radius: 10px;
       border: 2px solid #ff006e;
       background: linear-gradient(to right, #ffe0f7, #fff);
-      box-shadow: 0 4px 15px rgba(255, 0, 110, 0.2);
+      box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
     }
 
     .donators-list {
@@ -164,6 +202,7 @@
       font-weight: bold;
       padding: 8px 20px;
       color: #ff006e;
+      text-shadow: 0 0 10px #ff66cc, 0 0 15px #ff3399;
     }
 
     @keyframes scrollUp {
@@ -171,11 +210,81 @@
       100% { top: -100%; }
     }
 
+    /* Footer */
     .footer {
       text-align: center;
       margin-top: 30px;
       color: #bbb;
       font-size: 0.9rem;
+      border-top: 2px solid #ff006e;
+      padding: 10px;
+      box-shadow: 0 -2px 10px #ff006e;
+    }
+
+    /* 🎆 Click Firework */
+    .firework {
+      position: absolute;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff006e, transparent);
+      animation: explode 1s ease-out;
+      pointer-events: none;
+    }
+    @keyframes explode {
+      from { transform: scale(0); opacity: 1; }
+      to { transform: scale(5); opacity: 0; }
+    }
+
+    /* ====== WhatsApp Floating Help ====== */
+    .wh-widget {
+      position: fixed;
+      right: 18px;
+      bottom: 24%;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 300ms ease, opacity 300ms ease;
+      transform: translateY(0);
+      opacity: 1;
+      font-family: 'Poppins', sans-serif;
+    }
+    .wh-widget .wh-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(18,140,126,0.18);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(12px) scale(0.95);
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+    .wh-widget:hover .wh-pill {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    .wh-widget .wh-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+    .wh-widget .wh-circle svg {
+      width: 26px;
+      height: 26px;
+      display: block;
     }
   </style>
 </head>
@@ -227,11 +336,11 @@
   <center>
     <div class="donators-container">
       <div class="donators-list">
-        <div class="donator">1.Lucky Patel - ₹501</div>
-        <div class="donator">2.Rishu Patel - ₹250</div>
-        <div class="donator">3.Anup Patel - ₹151</div>
-        <div class="donator">4.Riteek Patel - ₹101</div>
-        <div class="donator">5.Bholu Patel - ₹51</div>
+        <div class="donator">1. Lucky Patel - ₹501</div>
+        <div class="donator">2. Rishu Patel - ₹250</div>
+        <div class="donator">3. Anup Patel - ₹151</div>
+        <div class="donator">4. Riteek Patel - ₹101</div>
+        <div class="donator">5. Bholu Patel - ₹51</div>
       </div>
     </div>
   </center>
@@ -241,17 +350,37 @@
     Made with ❤️ in India | Admin: Riteek
   </div>
 
-  <!-- ✅ JavaScript for Slider -->
+  <!-- ✅ WhatsApp Floating Help -->
+  <div class="wh-widget">
+    <a href="https://chat.whatsapp.com/G3Y9m6kPlpa1xpb30N5ks3?mode=ems_copy_t" target="_blank" class="wh-pill">हमारे WhatsApp Group से जुड़ें</a>
+    <div class="wh-circle">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.372 0 .036 5.336.036 11.964c0 2.116.553 4.186 1.602 6.01L0 24l6.193-1.607A11.94 11.94 0 0 0 12 23.928c6.628 0 11.964-5.336 11.964-11.964 0-3.2-1.245-6.204-3.444-8.484z" fill="#25D366"/>
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.149-.198.297-.768.967-.941 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.884-.788-1.48-1.762-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.151-.173.2-.298.3-.497.099-.198.05-.372-.025-.521-.074-.148-.672-1.62-.921-2.219-.243-.582-.49-.503-.672-.513l-.57-.01c-.198 0-.52.074-.793.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487 0 0 .094.037.169.037.099 0 .347-.021.53-.148.184-.13 1.144-.531 1.306-1.045.162-.516.162-.959.113-1.045-.049-.085-.198-.13-.396-.223z" fill="#fff"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ✅ JavaScript -->
   <script>
+    // Slider
     const slides = document.querySelectorAll('.slider img');
     let current = 0;
-
     setInterval(() => {
       slides[current].classList.remove('active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 5000);
-  </script>
 
+    // Firework Click Effect
+    document.addEventListener("click", function(e){
+      let fire = document.createElement("div");
+      fire.className = "firework";
+      fire.style.left = e.pageX + "px";
+      fire.style.top = e.pageY + "px";
+      document.body.appendChild(fire);
+      setTimeout(()=>{ fire.remove(); }, 1000);
+    });
+  </script>
 </body>
 </html>
